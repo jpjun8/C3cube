@@ -1,0 +1,11 @@
+1. Github -> new repository
+2. 원하는 폴더에서 Git bash 열기
+3. git init
+4. git remote add origin <1번에서 만든 repo URL>
+5. 파일 추가/변경, 폴더 추가 등 make some changes
+6. git status : 변동상황 체크
+7. git add . : 변경사항 commit에 추가
+8. git commit -m "메세지" : 서버로 commit
+9. git push origin master (main) : Github 원하는 branch로 변경사항 push
+9-1. 다른 commit과 충돌 시 merge conflict 발생 -> Pull request 자동으로 열리거나 열어서 해결
+10. Github repo에서 변동사항 확인

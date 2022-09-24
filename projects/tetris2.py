@@ -373,11 +373,18 @@ def main():
                     if not valid_space(current_piece, grid):
                         current_piece.rotation -= 1
 
-                if event.key in (pygame.K_SPACE, pygame.K_h):
+                if event.key in (pygame.K_LSHIFT, pygame.K_RSHIFT):
                     if not hold_used:
                         current_piece, held_piece, next_piece = hold_piece(current_piece, held_piece, next_piece)
                         current_piece.x, current_piece.y = 5, 0
                         hold_used = True
+
+                if event.key == pygame.K_SPACE:
+                    while(valid_space(current_piece, grid)):
+                        current_piece.y += 1
+                        if not valid_space(current_piece, grid):
+                            current_piece.y -= 1
+                            break
 
                 if event.key in (pygame.K_q, pygame.K_ESCAPE):
                     run = False

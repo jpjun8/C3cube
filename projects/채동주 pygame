@@ -1,7 +1,7 @@
 주제: Tetris w/ pygame
 
 1. 배포되어있는 pygame으로 만든 tetris 이용하여 원하는 기능/특징 추가/변경하여 자신만의 tetris 제작
-2. 우선 링크 참조: https://www.techwithtim.net/tutorials/game-development-with-python/tetris-pygame/tutorial-1/
+2. 우선 링크 참조: https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318
 2-1. 키 추가/변경해야함(홀드 키->c, 한번에 내리는 키->스페이스바)
 2-2. 내려갈 예정인 부분 회색으로 표시 (고려중, 어려움)
 2-3. 4줄 지우면 "Tetris"라고 화면에 출력하기

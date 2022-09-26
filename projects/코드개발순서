@@ -1,0 +1,26 @@
+1. 파이게임 설치 코드 + random 모듈 설명 (파이게임에 대한 기본적인 설명)
+2. 전역변수 설정 : 창의 너비와 높이, 게임판의 너비와 높이, 테트리스 블록 사이즈, 게임판의 왼쪽 위 좌표(x, y)
+3. 블록 모양 어떻게 변수에 저장하였는지 : 
+- shapes = [S, Z, I, O, J, L, T]
+- shape_colors : 모양들의 색깔
+- bag : 홀드 가방
+
+4. Piece 클래스 : 조종하고 있는 테트리스 블록 자체
+5. make_bag() : bag에 shapes 그대로 복사해오는 함수
+6. get_shape() : bag에서 piece의 모양 무작위로 고르기 + 게임판 중간 맨 위에 생성
+
+7-1. create_grid(locked_positions = {}) : 게임판 검정색으로 만들기 + 좌표 grid에 저장
+7-2. draw_grid(surface, grid) :
+- pygame.draw.line : 구분선 그리기
+
+~ 4분
+
+함수 9개 : 
+- draw_text_middle, draw_shape, draw_window, draw_next_shape, draw_held_shape : 1분
+- convert_shape_format, valid_space : 1분 30초
+- clear_rows : 1분
+- hold_piece, check_lost : 30초 (줄일 수 있으면 줄이기)
+
+~ 8분
+
+main부터 끝까지 : 2분

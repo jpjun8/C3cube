@@ -1,10 +1,9 @@
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.linear_model import LinearRegression
-# from sklearn.preprocessing import PolynomialFeatures
-from scipy.stats import sem
 import scipy.stats as stats
+from sklearn.linear_model import LinearRegression
+# from sklearn.preprocessing import PolynomialFeatures - For polynomial regression
 
 # 1. Frequency of Listening Music vs. Duration of Study
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Demo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main">
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="pwd" id="pwd" placeholder="Password" />
+        </div>
+
+        <!-- <button type="submit" class="submit-btn" onclick="register()">Submit</button>
+        <button type="submit" class="login-btn" onclick="login()">Login</button> -->
+
+    </div>
+
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="readData()">Read Data</button>
+    <button onclick="updateData()">Update Data</button>
+    <button onclick="deleteData()">Delete Data</button>
+
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+
+<script src="./index.js"></script>
+
+</html>

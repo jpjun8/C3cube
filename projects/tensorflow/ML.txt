@@ -1,0 +1,5 @@
+ML Types:
+    Supervised Learning (지도학습) : 데이터에 정답이 있고 정답예측 모델 만들 때
+    Unsupervised Leraning (비지도학습) : 데이터에 정답이 없네 -> 컴퓨터야 니가 알아서 분류좀
+    Reinforcement Learning (강화학습) : 컴퓨터에게 게임 가르친다
+        i.e., 벽돌깨기 : 하나 깨면 +1, 공잃으면 -10, 최종점수 높아지도록 알아서 방향키 움직여라

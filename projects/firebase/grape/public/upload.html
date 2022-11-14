@@ -36,6 +36,12 @@
     </nav>
 
     <div class="container mt-3">
+        <input type="text" id="title" class="form-control mt-2" placeholder="title">
+        <textarea id="content" class="form-control mt-2">content</textarea>
+        <input type="text" id="price" class="form-control mt-2" placeholder="price">
+        <input type="file" class="form-control mt-2" id="image">
+        <button class="btn btn-danger mt-3" id="send">올리기</button>
+    </div>
       
     </div>
 
@@ -67,22 +73,46 @@
 
     <script>
         const db = firebase.firestore();
-        db.collection('product').get().then((res) => {
-            res.forEach((doc) => {
-                // console.log(doc.data());
-                var temp = `<div class="product">
-                  <div class="thumbnail" style="background-image:url('https://via.placeholder.com/350')"></div>
-                  <div class="flex-grow-1 p-4">
-                    <h5 class="title">${doc.data().상품명}</h5>
-                    <p class="date">2030년 1월 8일</p>
-                    <p class="price">${doc.data().가격}원</p>
-                    <p class="float-end">♥</p>
-                  </div>
-                </div>`;
-                $('.container').append(temp);
-            })
+        const storage = firebase.storage();
+
+        $('#send').click(function() {
+            var file = document.querySelector('#image').files[0];
+            var storageRef = storage.ref();
+            var path = storageRef.child('image/' + file.name);
+            var upload = path.put(file);
+
+            upload.on('state_changed', 
+                // 변화시 동작
+                null,
+                // 에러시 동작
+                (error) => {
+                    console.error('실패사유는 ', error);
+                },
+                // 성공시 동작
+                () => {
+                    upload.snapshot.ref.getDownloadURL().then((url) => {
+                        console.log('업로드된 경로는', url);
+                        
+                        var obj = {
+                            상품명: $('#title').val(),
+                            내용: $('#content').val(),
+                            가격: parseInt($('#price').val()),
+                            날짜 : new Date(),
+                            이미지 : url
+                        }
+                        db.collection('product').add(obj).then((res) => {
+                            console.log(res)
+                            // window.location.href = "/index.html"
+                        }).catch((err) => {
+                            console.log(err)
+                        });
+                    });
+                }
+            )
+
         });
 
+        // db.collection('product').doc('상품3').set({상품명 : '변기'});
     </script>
 
 </body>

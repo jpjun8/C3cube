@@ -36,7 +36,16 @@
     </nav>
 
     <div class="container mt-3">
-      
+        <div class="mb-3">
+            <input type="text" id="name-new" placeholder = "name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="email" id="email-new" placeholder="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="password" id="pw-new" placeholder="pw" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" id="register">가입하기</button>
     </div>
 
     <script src="/__/firebase/8.6.5/firebase-app.js"></script>
@@ -67,21 +76,9 @@
 
     <script>
         const db = firebase.firestore();
-        db.collection('product').get().then((res) => {
-            res.forEach((doc) => {
-                // console.log(doc.data());
-                var temp = `<div class="product">
-                  <div class="thumbnail" style="background-image:url('https://via.placeholder.com/350')"></div>
-                  <div class="flex-grow-1 p-4">
-                    <h5 class="title">${doc.data().상품명}</h5>
-                    <p class="date">2030년 1월 8일</p>
-                    <p class="price">${doc.data().가격}원</p>
-                    <p class="float-end">♥</p>
-                  </div>
-                </div>`;
-                $('.container').append(temp);
-            })
-        });
+        const storage = firebase.storage();
+
+        firebase.auth().createUserWithEmailAndPassword()
 
     </script>
 

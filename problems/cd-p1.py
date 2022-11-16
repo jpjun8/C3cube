@@ -1,5 +1,4 @@
 x = int(input())
-i = 0
-while x > i:
+for i in range(x):
     i += 1
     print(i)

@@ -71,7 +71,7 @@
             res.forEach((doc) => {
                 // console.log(doc.data());
                 var temp = `<div class="product">
-                  <div class="thumbnail" style="background-image:url('https://via.placeholder.com/350')"></div>
+                  <div class="thumbnail" style="background-image:url(${doc.data().이미지})"></div>
                   <div class="flex-grow-1 p-4">
                     <h5 class="title">${doc.data().상품명}</h5>
                     <p class="date">2030년 1월 8일</p>

@@ -1,10 +1,20 @@
 import os
 import pandas as pd
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+
 from webdriver_manager.chrome import ChromeDriverManager
 
-browser = webdriver.Chrome(ChromeDriverManager().install())
+# Download appropriate chromdriver (check version of your chrome)
+# This one is for 107
+# browser = webdriver.Chrome("./chromedriver_win32/chromedriver")
+# browser.maximize_window()
+
+# Or install webdriver_manager module
+# This one has no deprecation warning
+browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 browser.maximize_window()
 
 # 1. 페이지 이동

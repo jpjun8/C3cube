@@ -1,13 +1,16 @@
 import speech_recognition as sr
+# pip install SpeechRecognition
 from gtts import gTTS
+# pip install gtts
 from playsound import playsound
+# pip install playsound
 import os
+import time
 
 # 음성 인식 (듣기):
 def listen(recognizer, audio):
     try:
         text = recognizer.recognize_google(audio, language = 'ko')
-        print('[나도코딩] ' + text)
     except sr.UnknownValueError:
         print('인식 실패')
     except sr.RequestError as e:

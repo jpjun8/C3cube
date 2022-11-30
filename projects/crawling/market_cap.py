@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Download appropriate chromdriver (check version of your chrome)
-# This one is for 107
+# This one is for 107 version
 # browser = webdriver.Chrome("./chromedriver_win32/chromedriver")
 # browser.maximize_window()
 

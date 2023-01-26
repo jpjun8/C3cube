@@ -32,22 +32,22 @@ class State(pc.State):
 
 
 def index():
-    return pc.center(
-        pc.vstack(
-            pc.heading("DALL-E", font_size="1.5em"),
-            pc.input(placeholder="Enter a prompt..", on_blur=State.set_prompt),
-            pc.button(
+    return pc.center( # type: ignore
+        pc.vstack( # type: ignore
+            pc.heading("DALL-E", font_size="1.5em"), # type: ignore
+            pc.input(placeholder="Enter a prompt..", on_blur=State.set_prompt), # type: ignore
+            pc.button( # type: ignore
                 "Generate Image",
                 on_click=[State.process_image, State.get_image],
                 width="100%",
             ),
-            pc.divider(),
-            pc.cond(
+            pc.divider(), # type: ignore
+            pc.cond( # type: ignore
                 State.image_processing,
-                pc.circular_progress(is_indeterminate=True),
-                pc.cond(
+                pc.circular_progress(is_indeterminate=True), # type: ignore
+                pc.cond( # type: ignore
                     State.image_made,
-                    pc.image(
+                    pc.image( # type: ignore
                         src=State.image_url,
                         height="25em",
                         width="25em",

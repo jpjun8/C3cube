@@ -48,4 +48,4 @@ norm = layers.Normalization()
 norm.adapt(np.array(titanic[numeric_inputs.keys()]))
 all_numeric_inputs = norm(x)
 
-print(all_numeric_inputs)
+preprocessed_inputs = [all_numeric_inputs]

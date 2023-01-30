@@ -18,7 +18,7 @@ abalone_features = abalone_train.copy()
 abalone_labels = abalone_features.pop('Age')
 
 abalone_features = np.array(abalone_features)
-print(abalone_features)
+# print(abalone_features)
 
 # regression model
 abalone_model = tf.keras.Sequential([
